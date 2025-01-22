@@ -1,0 +1,16 @@
+workload_path: "/Users/zsy/Documents/codespace/python/FlexBench_original/wzl_new_workload/diver/workload1h-5m-30s_3.csv"
+workload_name: "workload1h-5m-30s_3"
+host: "47.95.70.74"
+databend_port: 8000
+prometheus_port: 9090
+count_limit: 1000
+time_limit: 270
+use_operator: 1
+use_duration: 0
+wait: 8
+interval: 30
+query: [TPCH,TPCH,TPCH,TPCH,tpcds_all,tpcds_all,imdb]
+db: [tpch500m,tpch1g,tpch5g,tpch9g,tpcds1g,tpcds2g,imdb]
+op_scale: 100
+duration_scale: 30
+initial_count: 10

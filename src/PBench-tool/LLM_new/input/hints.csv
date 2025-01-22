@@ -1,0 +1,2 @@
+case,hint
+"Increase CPU Time","Use some self join operator to increase the size of the intermediate result"

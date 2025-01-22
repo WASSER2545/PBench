@@ -1,0 +1,171 @@
+[
+    {
+        "database": "imdb",
+        "tables": {
+            "aka_name": "70MiB",
+            "aka_title": "38MiB",
+            "cast_info": "1.4GiB",
+            "char_name": "206MiB",
+            "comp_cast_type": "45B",
+            "company_name": "17MiB",
+            "company_type": "92B",
+            "complete_cast": "2.3MiB",
+            "info_type": "1.9KiB",
+            "keyword": "3.6MiB",
+            "kind_type": "85B",
+            "link_type": "261B",
+            "movie_companies": "89MiB",
+            "movie_info": "919MiB",
+            "movie_info_idx": "34MiB",
+            "movie_keyword": "90MiB",
+            "movie_link": "641KiB",
+            "name": "306MiB",
+            "person_info": "381MiB",
+            "role_type": "160B",
+            "title": "206MiB"
+        }
+    },
+    {
+        "database": "tpcds1g",
+        "tables": {
+            "call_center": "1.8KiB",
+            "catalog_page": "1.6MiB",
+            "catalog_returns": "20MiB",
+            "catalog_sales": "282MiB",
+            "customer": "13MiB",
+            "customer_address": "5.2MiB",
+            "customer_demographics": "77MiB",
+            "date_dim": "9.8MiB",
+            "dbgen_version": "66B",
+            "household_demographics": "148KiB",
+            "income_band": "328B",
+            "inventory": "226MiB",
+            "item": "4.8MiB",
+            "promotion": "36KiB",
+            "reason": "1.3KiB",
+            "ship_mode": "1.1KiB",
+            "store": "3.1KiB",
+            "store_returns": "31MiB",
+            "store_sales": "370MiB",
+            "time_dim": "4.9MiB",
+            "warehouse": "585B",
+            "web_page": "5.6KiB",
+            "web_returns": "9.4MiB",
+            "web_sales": "140MiB",
+            "web_site": "8.6KiB"
+        }
+    },
+    {
+        "database": "tpcds2g",
+        "tables": {
+            "call_center": "2.4KiB",
+            "catalog_page": "1.6MiB",
+            "catalog_returns": "41MiB",
+            "catalog_sales": "568MiB",
+            "customer": "18MiB",
+            "customer_address": "7.6MiB",
+            "customer_demographics": "77MiB",
+            "date_dim": "9.8MiB",
+            "dbgen_version": "75B",
+            "household_demographics": "148KiB",
+            "income_band": "328B",
+            "inventory": "329MiB",
+            "item": "7.0MiB",
+            "promotion": "39KiB",
+            "reason": "1.3KiB",
+            "ship_mode": "1.1KiB",
+            "store": "5.8KiB",
+            "store_returns": "63MiB",
+            "store_sales": "748MiB",
+            "time_dim": "4.9MiB",
+            "warehouse": "585B",
+            "web_page": "7.0KiB",
+            "web_returns": "19MiB",
+            "web_sales": "282MiB",
+            "web_site": "8.6KiB"
+        }
+    },
+    {
+        "database": "tpch1g",
+        "tables": {
+            "customer": "23MiB",
+            "lineitem": "719MiB",
+            "nation": "2.1KiB",
+            "orders": "163MiB",
+            "part": "23MiB",
+            "partsupp": "113MiB",
+            "region": "384B",
+            "supplier": "1.3MiB"
+        }
+    },
+    {
+        "database": "tpch500m",
+        "tables": {
+            "customer": "12MiB",
+            "lineitem": "360MiB",
+            "nation": "2.2KiB",
+            "orders": "82MiB",
+            "part": "12MiB",
+            "partsupp": "56MiB",
+            "region": "389B",
+            "supplier": "688KiB"
+        }
+    },
+    {
+        "database": "tpch50m",
+        "tables": {
+            "customer": "1.2MiB",
+            "lineitem": "35MiB",
+            "nation": "2.2KiB",
+            "orders": "8.0MiB",
+            "part": "1.1MiB",
+            "partsupp": "5.6MiB",
+            "region": "389B",
+            "supplier": "68KiB"
+        }
+    },
+    {
+        "database": "tpch5g",
+        "tables": {
+            "customer": "116MiB",
+            "lineitem": "3.6GiB",
+            "nation": "2.1KiB",
+            "orders": "823MiB",
+            "part": "115MiB",
+            "partsupp": "568MiB",
+            "region": "384B",
+            "supplier": "6.7MiB"
+        }
+    },
+    {
+        "database": "tpch9g",
+        "tables": {
+            "customer": "209MiB",
+            "lineitem": "6.5GiB",
+            "nation": "2.1KiB",
+            "orders": "1.5GiB",
+            "part": "207MiB",
+            "partsupp": "1.0GiB",
+            "region": "384B",
+            "supplier": "12MiB"
+        }
+    },
+    {
+        "database": "write",
+        "tables": {
+            "product_category": "70KiB"
+        }
+    },
+    {
+        "database": "ycsb1g",
+        "tables": {
+            "usertable": "998MiB"
+        }
+    },
+    {
+        "database": "ycsb5g",
+        "tables": {
+            "usertable": "4.9GiB"
+        }
+    }
+]
