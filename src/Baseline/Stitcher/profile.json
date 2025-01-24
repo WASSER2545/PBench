@@ -1,0 +1,366 @@
+[
+  {
+    "configuration": [
+      {
+        "benchmark": "TPCH",
+        "database": "tpch500m",
+        "terminal": 1,
+        "frequency": 10
+      }
+    ],
+    "duration": 7.0839502811431885,
+    "cpu_time": 13.333333333333334,
+    "scan_bytes": 1896184508.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "TPCH",
+        "database": "tpch500m",
+        "terminal": 1,
+        "frequency": 15
+      }
+    ],
+    "duration": 9.58017102877299,
+    "cpu_time": 16.333333333333336,
+    "scan_bytes": 2178470050.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "TPCH",
+        "database": "tpch500m",
+        "terminal": 2,
+        "frequency": 10
+      }
+    ],
+    "duration": 14.167900562286377,
+    "cpu_time": 26.666666666666668,
+    "scan_bytes": 3792369016.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "TPCH",
+        "database": "tpch500m",
+        "terminal": 2,
+        "frequency": 15
+      }
+    ],
+    "duration": 19.16034205754598,
+    "cpu_time": 32.66666666666667,
+    "scan_bytes": 4356940100.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "TPCH",
+        "database": "tpch1g",
+        "terminal": 1,
+        "frequency": 10
+      }
+    ],
+    "duration": 10.379417737325033,
+    "cpu_time": 25.666666666666664,
+    "scan_bytes": 3205443318.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "TPCH",
+        "database": "tpch1g",
+        "terminal": 1,
+        "frequency": 15
+      }
+    ],
+    "duration": 13.663470347722372,
+    "cpu_time": 30.66666666666666,
+    "scan_bytes": 3639956418.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "TPCH",
+        "database": "tpch1g",
+        "terminal": 2,
+        "frequency": 10
+      }
+    ],
+    "duration": 20.758835474650066,
+    "cpu_time": 51.33333333333333,
+    "scan_bytes": 6410886636.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "TPCH",
+        "database": "tpch1g",
+        "terminal": 2,
+        "frequency": 15
+      }
+    ],
+    "duration": 27.326940695444744,
+    "cpu_time": 61.33333333333332,
+    "scan_bytes": 7279912836.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "TPCH",
+        "database": "tpch5g",
+        "terminal": 1,
+        "frequency": 10
+      }
+    ],
+    "duration": 31.54765470822652,
+    "cpu_time": 138.0,
+    "scan_bytes": 16023006090.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "TPCH",
+        "database": "tpch5g",
+        "terminal": 1,
+        "frequency": 15
+      }
+    ],
+    "duration": 39.8397794564565,
+    "cpu_time": 165.33333333333331,
+    "scan_bytes": 18197804974.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "TPCH",
+        "database": "tpch5g",
+        "terminal": 2,
+        "frequency": 10
+      }
+    ],
+    "duration": 63.09530941645304,
+    "cpu_time": 276.0,
+    "scan_bytes": 32046012180.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "TPCH",
+        "database": "tpch5g",
+        "terminal": 2,
+        "frequency": 15
+      }
+    ],
+    "duration": 79.679558912913,
+    "cpu_time": 330.66666666666663,
+    "scan_bytes": 36395609948.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "TPCH",
+        "database": "tpch9g",
+        "terminal": 1,
+        "frequency": 10
+      }
+    ],
+    "duration": 52.64185007413228,
+    "cpu_time": 249.0,
+    "scan_bytes": 28835251152.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "TPCH",
+        "database": "tpch9g",
+        "terminal": 1,
+        "frequency": 15
+      }
+    ],
+    "duration": 63.8994878133138,
+    "cpu_time": 297.3333333333333,
+    "scan_bytes": 32746557476.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "TPCH",
+        "database": "tpch9g",
+        "terminal": 2,
+        "frequency": 10
+      }
+    ],
+    "duration": 105.28370014826456,
+    "cpu_time": 498.0,
+    "scan_bytes": 57670502304.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "TPCH",
+        "database": "tpch9g",
+        "terminal": 2,
+        "frequency": 15
+      }
+    ],
+    "duration": 127.7989756266276,
+    "cpu_time": 594.6666666666666,
+    "scan_bytes": 65493114952.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "tpcds_all",
+        "database": "tpcds1g",
+        "terminal": 1,
+        "frequency": 10
+      }
+    ],
+    "duration": 10.820235252380371,
+    "cpu_time": 33.0,
+    "scan_bytes": 5709483890.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "tpcds_all",
+        "database": "tpcds1g",
+        "terminal": 1,
+        "frequency": 15
+      }
+    ],
+    "duration": 17.005975087483726,
+    "cpu_time": 50.33333333333333,
+    "scan_bytes": 7398834662.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "tpcds_all",
+        "database": "tpcds1g",
+        "terminal": 2,
+        "frequency": 10
+      }
+    ],
+    "duration": 21.640470504760742,
+    "cpu_time": 66.0,
+    "scan_bytes": 11418967780.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "tpcds_all",
+        "database": "tpcds1g",
+        "terminal": 2,
+        "frequency": 15
+      }
+    ],
+    "duration": 34.01195017496745,
+    "cpu_time": 100.66666666666666,
+    "scan_bytes": 14797669324.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "tpcds_all",
+        "database": "tpcds2g",
+        "terminal": 1,
+        "frequency": 10
+      }
+    ],
+    "duration": 13.960743665695189,
+    "cpu_time": 55.666666666666664,
+    "scan_bytes": 8212435098.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "tpcds_all",
+        "database": "tpcds2g",
+        "terminal": 1,
+        "frequency": 15
+      }
+    ],
+    "duration": 21.863074302673336,
+    "cpu_time": 84.33333333333333,
+    "scan_bytes": 10505953500.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "tpcds_all",
+        "database": "tpcds2g",
+        "terminal": 2,
+        "frequency": 10
+      }
+    ],
+    "duration": 27.921487331390377,
+    "cpu_time": 111.33333333333333,
+    "scan_bytes": 16424870196.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "tpcds_all",
+        "database": "tpcds2g",
+        "terminal": 2,
+        "frequency": 15
+      }
+    ],
+    "duration": 43.72614860534667,
+    "cpu_time": 168.66666666666666,
+    "scan_bytes": 21011907000.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "imdb",
+        "database": "imdb",
+        "terminal": 1,
+        "frequency": 10
+      }
+    ],
+    "duration": 19.415362278620403,
+    "cpu_time": 57.0,
+    "scan_bytes": 3290437604.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "imdb",
+        "database": "imdb",
+        "terminal": 1,
+        "frequency": 15
+      }
+    ],
+    "duration": 29.59509603182475,
+    "cpu_time": 89.66666666666667,
+    "scan_bytes": 6441152384.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "imdb",
+        "database": "imdb",
+        "terminal": 2,
+        "frequency": 10
+      }
+    ],
+    "duration": 38.830724557240806,
+    "cpu_time": 114.0,
+    "scan_bytes": 6580875208.0
+  },
+  {
+    "configuration": [
+      {
+        "benchmark": "imdb",
+        "database": "imdb",
+        "terminal": 2,
+        "frequency": 15
+      }
+    ],
+    "duration": 59.1901920636495,
+    "cpu_time": 179.33333333333334,
+    "scan_bytes": 12882304768.0
+  }
+]

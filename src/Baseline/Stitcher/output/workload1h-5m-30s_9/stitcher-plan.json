@@ -1,0 +1,574 @@
+[
+  [
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds2g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "ycsb",
+      "database": "ycsb5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 0,
+      "terminal": 0
+    }
+  ],
+  [
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds1g",
+      "frequency": 1,
+      "terminal": 16
+    },
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds2g",
+      "frequency": 1,
+      "terminal": 1
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 80,
+      "terminal": 16
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 1,
+      "terminal": 16
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 80,
+      "terminal": 1
+    },
+    {
+      "benchmark": "ycsb",
+      "database": "ycsb5g",
+      "frequency": 1,
+      "terminal": 1
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 1,
+      "terminal": 1
+    }
+  ],
+  [
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds1g",
+      "frequency": 1,
+      "terminal": 1
+    },
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds2g",
+      "frequency": 1,
+      "terminal": 16
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 43,
+      "terminal": 1
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 1,
+      "terminal": 1
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 80,
+      "terminal": 1
+    },
+    {
+      "benchmark": "ycsb",
+      "database": "ycsb5g",
+      "frequency": 1,
+      "terminal": 1
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 1,
+      "terminal": 1
+    }
+  ],
+  [
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds2g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "ycsb",
+      "database": "ycsb5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 0,
+      "terminal": 0
+    }
+  ],
+  [
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds1g",
+      "frequency": 1,
+      "terminal": 1
+    },
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds2g",
+      "frequency": 80,
+      "terminal": 1
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 23,
+      "terminal": 1
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 32,
+      "terminal": 1
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 80,
+      "terminal": 16
+    },
+    {
+      "benchmark": "ycsb",
+      "database": "ycsb5g",
+      "frequency": 15,
+      "terminal": 1
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 1,
+      "terminal": 16
+    }
+  ],
+  [
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds2g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "ycsb",
+      "database": "ycsb5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 0,
+      "terminal": 0
+    }
+  ],
+  [
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds2g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "ycsb",
+      "database": "ycsb5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 0,
+      "terminal": 0
+    }
+  ],
+  [
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds1g",
+      "frequency": 1,
+      "terminal": 1
+    },
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds2g",
+      "frequency": 1,
+      "terminal": 1
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 80,
+      "terminal": 16
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 1,
+      "terminal": 1
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 80,
+      "terminal": 1
+    },
+    {
+      "benchmark": "ycsb",
+      "database": "ycsb5g",
+      "frequency": 1,
+      "terminal": 1
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 1,
+      "terminal": 1
+    }
+  ],
+  [
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds1g",
+      "frequency": 29,
+      "terminal": 1
+    },
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds2g",
+      "frequency": 1,
+      "terminal": 16
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 1,
+      "terminal": 16
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 42,
+      "terminal": 1
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 38,
+      "terminal": 1
+    },
+    {
+      "benchmark": "ycsb",
+      "database": "ycsb5g",
+      "frequency": 80,
+      "terminal": 1
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 27,
+      "terminal": 1
+    }
+  ],
+  [
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds2g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "ycsb",
+      "database": "ycsb5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 0,
+      "terminal": 0
+    }
+  ],
+  [
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds1g",
+      "frequency": 1,
+      "terminal": 1
+    },
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds2g",
+      "frequency": 1,
+      "terminal": 1
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 46,
+      "terminal": 16
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 1,
+      "terminal": 1
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 45,
+      "terminal": 16
+    },
+    {
+      "benchmark": "ycsb",
+      "database": "ycsb5g",
+      "frequency": 1,
+      "terminal": 1
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 1,
+      "terminal": 1
+    }
+  ],
+  [
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds2g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "ycsb",
+      "database": "ycsb5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 0,
+      "terminal": 0
+    }
+  ],
+  [
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds1g",
+      "frequency": 41,
+      "terminal": 7
+    },
+    {
+      "benchmark": "tpcds",
+      "database": "tpcds2g",
+      "frequency": 26,
+      "terminal": 1
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 29,
+      "terminal": 12
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 14,
+      "terminal": 9
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 34,
+      "terminal": 5
+    },
+    {
+      "benchmark": "ycsb",
+      "database": "ycsb5g",
+      "frequency": 29,
+      "terminal": 9
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 24,
+      "terminal": 1
+    }
+  ]
+]

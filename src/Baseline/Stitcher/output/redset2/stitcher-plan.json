@@ -1,0 +1,530 @@
+[
+  [
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 7,
+      "terminal": 1
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds1g",
+      "frequency": 42,
+      "terminal": 1
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds2g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch9g",
+      "frequency": 0,
+      "terminal": 0
+    }
+  ],
+  [
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 4,
+      "terminal": 1
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds2g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch9g",
+      "frequency": 0,
+      "terminal": 0
+    }
+  ],
+  [
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds1g",
+      "frequency": 11,
+      "terminal": 1
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds2g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch9g",
+      "frequency": 0,
+      "terminal": 0
+    }
+  ],
+  [
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds1g",
+      "frequency": 4,
+      "terminal": 1
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds2g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch9g",
+      "frequency": 0,
+      "terminal": 0
+    }
+  ],
+  [
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 7,
+      "terminal": 1
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds1g",
+      "frequency": 29,
+      "terminal": 1
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds2g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch9g",
+      "frequency": 0,
+      "terminal": 0
+    }
+  ],
+  [
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds1g",
+      "frequency": 35,
+      "terminal": 1
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds2g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch9g",
+      "frequency": 0,
+      "terminal": 0
+    }
+  ],
+  [
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds1g",
+      "frequency": 26,
+      "terminal": 1
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds2g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch9g",
+      "frequency": 0,
+      "terminal": 0
+    }
+  ],
+  [
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds1g",
+      "frequency": 15,
+      "terminal": 1
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds2g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch9g",
+      "frequency": 0,
+      "terminal": 0
+    }
+  ],
+  [
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds1g",
+      "frequency": 6,
+      "terminal": 1
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds2g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch9g",
+      "frequency": 0,
+      "terminal": 0
+    }
+  ],
+  [
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds1g",
+      "frequency": 2,
+      "terminal": 1
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds2g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch9g",
+      "frequency": 0,
+      "terminal": 0
+    }
+  ],
+  [
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds1g",
+      "frequency": 11,
+      "terminal": 1
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds2g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch9g",
+      "frequency": 0,
+      "terminal": 0
+    }
+  ],
+  [
+    {
+      "benchmark": "TPCH",
+      "database": "tpch5g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch1g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch500m",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "imdb",
+      "database": "imdb",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds1g",
+      "frequency": 7,
+      "terminal": 1
+    },
+    {
+      "benchmark": "tpcds_all",
+      "database": "tpcds2g",
+      "frequency": 0,
+      "terminal": 0
+    },
+    {
+      "benchmark": "TPCH",
+      "database": "tpch9g",
+      "frequency": 0,
+      "terminal": 0
+    }
+  ]
+]

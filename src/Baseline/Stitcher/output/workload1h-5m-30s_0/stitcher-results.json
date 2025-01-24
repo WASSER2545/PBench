@@ -1,0 +1,80 @@
+[
+  {
+    "time_slot_idx": 0,
+    "cputime_sum": 33.42999999970198,
+    "scanbytes_sum": 6698052125.0,
+    "duration": 73.0
+  },
+  {
+    "time_slot_idx": 1,
+    "cputime_sum": 221.35000000009313,
+    "scanbytes_sum": 39147483235.0,
+    "duration": 63.0
+  },
+  {
+    "time_slot_idx": 2,
+    "cputime_sum": 173.8800000003539,
+    "scanbytes_sum": 34294507571.0,
+    "duration": 64.0
+  },
+  {
+    "time_slot_idx": 3,
+    "cputime_sum": 188.6699999999255,
+    "scanbytes_sum": 34949488191.0,
+    "duration": 63.0
+  },
+  {
+    "time_slot_idx": 4,
+    "cputime_sum": 72.71999999973923,
+    "scanbytes_sum": 14223879619.0,
+    "duration": 74.0
+  },
+  {
+    "time_slot_idx": 5,
+    "cputime_sum": 180.77000000001863,
+    "scanbytes_sum": 35385916478.0,
+    "duration": 61.0
+  },
+  {
+    "time_slot_idx": 6,
+    "cputime_sum": 87.00000000046566,
+    "scanbytes_sum": 13912473597.0,
+    "duration": 65.0
+  },
+  {
+    "time_slot_idx": 7,
+    "cputime_sum": 284.4799999995157,
+    "scanbytes_sum": 48483112921.0,
+    "duration": 64.0
+  },
+  {
+    "time_slot_idx": 8,
+    "cputime_sum": 169.92000000039116,
+    "scanbytes_sum": 31650658273.0,
+    "duration": 63.0
+  },
+  {
+    "time_slot_idx": 9,
+    "cputime_sum": 129.85999999940395,
+    "scanbytes_sum": 25674445257.0,
+    "duration": 72.0
+  },
+  {
+    "time_slot_idx": 10,
+    "cputime_sum": 134.81000000052154,
+    "scanbytes_sum": 16802627750.0,
+    "duration": 72.0
+  },
+  {
+    "time_slot_idx": 11,
+    "cputime_sum": 182.34999999962747,
+    "scanbytes_sum": 37282832437.0,
+    "duration": 63.0
+  },
+  {
+    "time_slot_idx": 12,
+    "cputime_sum": 180.42000000085682,
+    "scanbytes_sum": 35439481288.0,
+    "duration": 64.0
+  }
+]
