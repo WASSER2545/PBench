@@ -103,23 +103,6 @@ Python 3.10 is required to run FlexBench. To set up the environment, follow the 
 
 [Snowset](https://github.com/resource-disaggregation/snowset) contains several statistics (timing, I/O, resource usage, etc..) pertaining to ~70 million queries from all customers that ran on [Snowflake](https://www.snowflake.com/) over a 14 day period from Feb 21st 2018 to March 7th 2018. FlexBench uses the statistics in Snowset to synthesize database workloads.
 
-To prepare Snowset, follow the steps below:
-
-1. Deploy Postgres as a Docker container
-
-    ```
-    cd snowset
-    ./deploy_postgres.sh
-    ```
-
-2. Load Snowset into Postgres -- see `snowset/load_snowset.sql` for details
-
-3. Extract database workload from Snowset
-
-    ```
-    python extract_workload.py
-    ```
-
 # Usage
 
 FlexBench can synthesize database workloads using different methods. The following sections describe how to use each method.
