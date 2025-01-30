@@ -1,5 +1,5 @@
 <p align="center">
-    <h3 align="center">FlexBench</h3>
+    <h3 align="center">PBench</h3>
     <p align="center">A database workload synthesizer</p>
     <p align="center">
         <a href="#directory">Directory</a> •
@@ -85,7 +85,7 @@
 
 # Environment
 
-Python 3.10 is required to run FlexBench. To set up the environment, follow the steps below:
+Python 3.10 is required to run PBench. To set up the environment, follow the steps below:
 
 1. Install Python 3.10
 
@@ -101,11 +101,11 @@ Python 3.10 is required to run FlexBench. To set up the environment, follow the 
 
 # Workload
 
-[Snowset](https://github.com/resource-disaggregation/snowset) contains several statistics (timing, I/O, resource usage, etc..) pertaining to ~70 million queries from all customers that ran on [Snowflake](https://www.snowflake.com/) over a 14 day period from Feb 21st 2018 to March 7th 2018. FlexBench uses the statistics in Snowset to synthesize database workloads.
+[Snowset](https://github.com/resource-disaggregation/snowset) contains several statistics (timing, I/O, resource usage, etc..) pertaining to ~70 million queries from all customers that ran on [Snowflake](https://www.snowflake.com/) over a 14 day period from Feb 21st 2018 to March 7th 2018. PBench uses the statistics in Snowset to synthesize database workloads.
 
 # Usage
 
-FlexBench can synthesize database workloads using different methods. The following sections describe how to use each method.
+PBench can synthesize database workloads using different methods. The following sections describe how to use each method.
 
 ## Configuration
 
@@ -125,19 +125,19 @@ To synthesize database workloads by Stitcher, follow the steps below:
 1. Collect the statistics of benchmark pieces
 
     ```
-    PYTHONPATH=[path to FlexBench]/simulator python simulator/learning/collect.py 
+    PYTHONPATH=[path to PBench]/simulator python simulator/learning/collect.py 
     ```
 
 2. Synthesize database workloads
 
     ```
-    PYTHONPATH=[path to FlexBench]/simulator python simulator/learning/stitcher.py
+    PYTHONPATH=[path to PBench]/simulator python simulator/learning/stitcher.py
     ```
 
 3. Play the synthesized database workloads
 
     ```
-    PYTHONPATH=[path to FlexBench]/simulator python simulator/learning/replay.py
+    PYTHONPATH=[path to PBench]/simulator python simulator/learning/replay.py
     ```
 
 Parameters of Stitcher can also be set in `simulator/.env`.
@@ -171,19 +171,19 @@ To synthesize database workloads by Integer Linear Programming, follow the steps
 1. Collect the statistics of queries
 
     ```
-    PYTHONPATH=[path to FlexBench]/simulator python simulator/linear/collect.py 
+    PYTHONPATH=[path to PBench]/simulator python simulator/linear/collect.py 
     ```
 
 2. Synthesize database workloads
 
     ```
-    PYTHONPATH=[path to FlexBench]/simulator python simulator/linear/linear.py
+    PYTHONPATH=[path to PBench]/simulator python simulator/linear/linear.py
     ```
 
 3. Play the synthesized database workloads
 
     ```
-    PYTHONPATH=[path to FlexBench]/simulator python simulator/linear/replay.py
+    PYTHONPATH=[path to PBench]/simulator python simulator/linear/replay.py
     ```
 
 Parameters of Integer Linear Programming can also be set in `simulator/.env`.
