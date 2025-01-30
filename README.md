@@ -2,95 +2,12 @@
     <h3 align="center">PBench</h3>
     <p align="center">A database workload synthesizer</p>
     <p align="center">
-        <a href="#directory">Directory</a> •
         <a href="#environment">Environment</a> •
         <a href="#workload">Workload</a> •
         <a href="#usage">Usage</a>
     </p>
 </p>
 
-# Directory
-
-```
-│  README.md
-│  requirements.txt
-│  
-└─src
-    ├─Baseline
-    │  │  do_baseline.py
-    │  │  
-    │  ├─CAB
-    │  │  │  cab_replay.py
-    │  │  │  gen.py
-    │  │  │  gen_redset.py
-    │  │  │  prometheus.py
-    │  │  │  
-    │  │  └─output
-    │  │      ├─workload1h-5m-30s_1
-    │  │      │      TPCH+TPCH+TPCH+TPCH+imdb+tpcds_all+tpcds_all-plan.json
-    │  │      │      TPCH+TPCH+TPCH+TPCH+imdb+tpcds_all+tpcds_all-results.json
-    │  │              
-    │  └─Stitcher
-    │      │  profile.json
-    │      │  prometheus.py
-    │      │  replay.py
-    │      │  stitcher.py
-    │      │  util.py
-    │      │  
-    │      ├─benchmark
-    │      │      imdb.sql
-    │      │      tpcds_all.sql
-    │      │      TPCH.sql
-    │      │      ycsb.py
-    │      │      ycsb.sql
-    │      │      
-    │      └─output
-    │                  
-    ├─Collect_metrics
-    │      collect.py
-    │      
-    ├─PBench-tool
-    │  │  linearprogram_option.py
-    │  │  prometheus.py
-    │  │  random_send.py
-    │  │  replay_sa.py
-    │  │  run_pbench.py
-    │  │  simulatedannealing.py
-    │  │  
-    │  ├─configs
-    │  │  ├─workload1h-5m-30s_1
-    │  │          
-    │  └─LLM_tools
-    │      ├─input
-    │      │  │  hints.csv
-    │      │  │  keys.txt
-    │      │  │  
-    │      │  └─table_schema
-    │      │          table_meta.json
-    │      │          tpch1g.sql
-    │      │          
-    │      ├─output
-    │      │      llm-llm-sql-metrics.json
-    │      │      llm_analyze.ipynb
-    │      │      replay_log.txt
-    │      │      
-    │      └─src
-    │          │  a.ipynb
-    │          │  inteaction.py
-    │          │  llmapi.py
-    │          │  llm_gen.py
-    │          │  llm_gen_redset.py
-    │          │  replay_and_fetch.py
-    │          │  retrieve_examples.py
-    │          │  retrieve_meta.py
-    │                  
-    ├─utils
-    │      prometheus.py
-    │      
-    └─Workloads
-        └─Snowset
-                workload1h-5m-30s_1.csv
-```
 
 # Environment
 
