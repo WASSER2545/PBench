@@ -2,12 +2,12 @@ import os
 import yaml
 
 from simulatedannealing import *
-from replay_sa import *
+from replay_ta import *
 from linearprogram_option import *
 from random_send import *
 
 if __name__ == '__main__': 
-    directory = '/Users/zsy/Documents/codespace/python/FlexBench_original/simulator/rushrush/configs/1hexp/workload1h-5m-30s_4'
+    directory = './configs/'
     for root, dirs, files in os.walk(directory):
         for file in files:
             if file.endswith('.yml'):
@@ -17,7 +17,8 @@ if __name__ == '__main__':
                     print(f"processing {file}")
                     print(config)
                     ILP_work(config)
-                    # gen_sa(config)
-                    # replay_sa(config)
+                    gen_ta(config)
+                    replay_ta(config)
+
                     # gen_random(config)
                     # replay_random(config)

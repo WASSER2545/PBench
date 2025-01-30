@@ -5,8 +5,6 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 
 import numpy as np
-import sys
-sys.path.append("/Users/zsy/Documents/codespace/python/FlexBench_original/simulator/rushrush")
 from prometheus import prometheus_queries
 from databend_py import Client
 from dotenv import load_dotenv
@@ -18,19 +16,7 @@ def get_time():
     timestamp = time.time()
                         
     return timestamp
-def load_config():
-    """ Load configuration from environment variables. """
-    load_dotenv()
-    return {
-        "query": os.getenv("LP_QUERY_SET", "").split(","),
-        "host": os.getenv("HOST"),
-        "databend_port": os.getenv("DATABEND_PORT"),
-        "prometheus_port": os.getenv("PROMETHEUS_PORT"),
-        "wait": int(os.getenv("WAIT_TIME", 0)),
-        "interval": int(os.getenv("SA_SECONDS_IN_TIME_INTERVAL", 0)),
-        "workload_name": os.getenv("WORKLOAD_NAME", "default"),
-        "use_operator": int(os.getenv("USE_OPERATOR", 0))
-    }
+
 def execute_query(host, port, query, database):
     """ Execute a given SQL query using the databend client. """
     client = Client(f"root:@{host}", port=port, secure=False, database=database)
@@ -40,12 +26,11 @@ def execute_query(host, port, query, database):
         print(f"Error: {e}")
         pass
 
-
 def load_plan(config):
     """ Load the execution plan from a JSON file. """
     workload_name = config["workload_name"]
     back = "+".join(sorted(config["query"]))
-    plan_path = f"/Users/zsy/Documents/codespace/python/FlexBench_original/simulator/rushrush/output/sa_plan/{workload_name}/{back}-plan2.json"    
+    plan_path = f"./output/sa_plan/{workload_name}/{back}-plan2.json"    
     with open(plan_path, "r") as f:
         return json.load(f)
 
@@ -155,11 +140,11 @@ def save_results(config, data):
     """ Save the execution results to a JSON file. """
     workload = config["workload_name"]
     back = "+".join(sorted(config["query"]))
-    res_path = f"/Users/zsy/Documents/codespace/python/FlexBench_original/simulator/rushrush/output/replay_sa/{workload}/{back}-results.json"
+    res_path = f"./output/replay_ta/{workload}/{back}-results.json"
     with open(res_path, "w") as f:
         json.dump(data, f, indent=2)
 
-def replay_sa(config):
+def replay_ta(config):
     plan = load_plan(config)
     results, avg_duration = execute_plan(config, plan)
     print(f"Average Duration: {avg_duration:.2f}s")
@@ -168,16 +153,17 @@ def replay_sa(config):
 def load_random_plan(config):
     workload_name = config["workload_name"]
     back = "+".join(sorted(config["query"]))
-    plan_path = f"/Users/zsy/Documents/codespace/python/FlexBench_original/simulator/rushrush/output/sa_plan/{workload_name}/random-{back}-plan2.json"    
+    plan_path = f"./output/sa_plan/{workload_name}/random-{back}-plan2.json"    
     with open(plan_path, "r") as f:
         return json.load(f)
     
 def save_random_results(config, data):
     workload = config["workload_name"]
     back = "+".join(sorted(config["query"]))
-    res_path = f"/Users/zsy/Documents/codespace/python/FlexBench_original/simulator/rushrush/output/replay_sa/{workload}/random-{back}-results.json"
+    res_path = f"./output/replay_sa/{workload}/random-{back}-results.json"
     with open(res_path, "w") as f:
         json.dump(data, f, indent=2)
+
 def replay_random(config):
     plan = load_random_plan(config)
     results, avg_duration = execute_plan(config, plan)

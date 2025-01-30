@@ -17,7 +17,7 @@ join_error = []
 
 def read_sql_records(query_set, database):
     """ Read SQL records from a JSON file. """
-    record_file = os.path.join(f"/Users/zsy/Documents/codespace/python/FlexBench_original/simulator/rushrush/metrics_witho/output/{query_set}-{database}-sql-metrics.json")
+    record_file = os.path.join(f"../Collect_metrics/metrics_witho/output/{query_set}-{database}-sql-metrics.json")
     with open(record_file, "r") as f:
         return json.load(f)
 
@@ -110,23 +110,18 @@ class Problem(Annealer):
         
         new_durations = self.reload_queries()
         
-        #new_durations = [query["info"]["avg_duration"] for query in self.queries]
-
         for i, query in enumerate(self.queries):
             interval = self.interval
             cpu_duration = new_durations[i]
             cpu_per_second = query["info"]["avg_cpu_time"] / cpu_duration
             query_lasted = int(cpu_duration // interval + 1)
-            #scan_bytes_per_second = query["info"]["avg_scan_bytes"] / cpu_duration
             workload_scanbytes[self.state[i] + query_lasted - 1] += query["info"]["avg_scan_bytes"]
             for j in range(query_lasted):
                 # cputime
                 if cpu_duration >= interval:
                     workload_cpu[self.state[i] + j] += cpu_per_second * interval
-                    #workload_scanbytes[self.state[i] + j] += scan_bytes_per_second * interval
                 else:
                     workload_cpu[self.state[i] + j] += cpu_per_second * cpu_duration
-                    #workload_scanbytes[self.state[i] + j] += scan_bytes_per_second * cpu_duration
                 cpu_duration -= interval
                 
                 # operators
@@ -142,10 +137,7 @@ class Problem(Annealer):
                 workload_sort[i] /= workload_sql_cnt[i]
                 workload_join[i] /= workload_sql_cnt[i]
                 workload_agg[i] /= workload_sql_cnt[i]
-        
-        # cpu_error = sum([abs(workload - target) / self.cpu_base for workload, target in zip(workload_cpu, self.cpu_target)])
-        # scanbytes_error = sum([abs(workload - target) / self.scanbytes_base for workload, target in zip(workload_scanbytes, self.scanbytes_target)])
-        
+                
         cpu_error = sum([abs(workload - target) for workload, target in zip(workload_cpu, self.cpu_target)])
         scanbytes_error = sum([abs(workload - target) for workload, target in zip(workload_scanbytes, self.scanbytes_target)])
 
@@ -170,7 +162,6 @@ class Problem(Annealer):
         agg_es = [abs(workload - target) for workload, target in zip(workload_agg, self.agg_target)]
         
         return cpu_error + scanbytes_error
-        # return (filter_error + sort_error + join_error + agg_error) * 100
 
 def delete_space(s):
     s = s.replace("\n", "")
@@ -250,7 +241,6 @@ def set_query_timestamp(config, workload, plans):
         problem.copy_strategy = "slice"
         state, e = problem.anneal()
         
-        # print(cpu_e, scan_e)
         print(cpu_es, scan_es)
 
         tmp = [[] for _ in range(len(cpu_target))]
@@ -266,7 +256,7 @@ def save_plan(config, results):
     """ Save the optimization plan to a JSON file. """
     workload = config["workload_name"]
     back = "+".join(sorted(config["query"]))
-    plan_path = f"/Users/zsy/Documents/codespace/python/FlexBench_original/simulator/rushrush/output/sa_plan/{workload}/{back}-plan2.json"
+    plan_path = f"./output/sa_plan/{workload}/{back}-plan2.json"
     with open(plan_path, "w") as f:
         json.dump(results, f, indent=2)
 
@@ -275,7 +265,7 @@ def load_plan(config):
     """ Load the execution plan from a JSON file. """
     workload_name = config["workload_name"]
     back = "+".join(sorted(config["query"]))
-    plan_path = f"/Users/zsy/Documents/codespace/python/FlexBench_original/simulator/rushrush/output/plan/{workload_name}/{back}-plan.json"    
+    plan_path = f"./output/plan/{workload_name}/{back}-plan.json"    
     with open(plan_path, "r") as f:
         return json.load(f)
 
@@ -284,7 +274,7 @@ def load_workload(config):
     workload = pd.read_csv(config["workload_path"])
     return workload
 
-def gen_sa(config):
+def gen_ta(config):
     import time
     s = time.time()
     plans = load_plan(config)

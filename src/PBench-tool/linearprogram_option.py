@@ -16,17 +16,12 @@ def get_time():
 
 def read_sql_records(query_set, database):
     """ Read SQL records from a JSON file. """
-    record_file = os.path.join(f"/Users/zsy/Documents/codespace/python/FlexBench_original/simulator/rushrush/metrics_witho/output/{query_set}-{database}-sql-metrics.json")
+    record_file = os.path.join(f"../Collect_metrics/metrics_witho/output/{query_set}-{database}-sql-metrics.json")
     with open(record_file, "r") as f:
         return json.load(f)
 
 
 def solve_integer_linear_programming_with_normalization(config, items, target_cpu_time, target_scan_bytes, target_duration, time_limit, target_filter=None, target_join=None, target_agg=None, target_sort=None, count_limit=None,real_count=None):
-    # for i in range(len(items)):
-    #     if items[i]["query"].startswith("EXPLAIN ANALYZE SELECT 1"):
-    #         #在这个列表中删除这一项
-    #         print(items[i]["query"])
-    #         items.pop(i)
     """ Solve the integer linear programming problem with normalization. """
     prob = pulp.LpProblem("MinimizeDifference", pulp.LpMinimize)
     item_vars = [pulp.LpVariable(f"n_{i}", lowBound=0, cat='Integer') for i in range(len(items))]
@@ -49,13 +44,9 @@ def solve_integer_linear_programming_with_normalization(config, items, target_cp
             items[i]["factor"] = 1
 
     # Performance Metrics
-    # prob += ((sum([item["factor"] * item["avg_cpu_time"] * item_vars[i] for i, item in enumerate(items)]) - target_cpu_time) / target_cpu_time) <= cpu_var
-    # prob += ((target_cpu_time - sum([item["factor"] * item["avg_cpu_time"] * item_vars[i] for i, item in enumerate(items)])) / target_cpu_time) <= cpu_var
     prob += sum([item["factor"] * item["avg_cpu_time"] * item_vars[i] for i, item in enumerate(items)]) - target_cpu_time <= cpu_var
     prob += target_cpu_time - sum([item["factor"] * item["avg_cpu_time"] * item_vars[i] for i, item in enumerate(items)]) <= cpu_var
 
-    # prob += ((sum([item["factor"] * item["avg_scan_bytes"] * item_vars[i] for i, item in enumerate(items)]) - target_scan_bytes) / target_scan_bytes) <= scan_var
-    # prob += ((target_scan_bytes - sum([item["factor"] * item["avg_scan_bytes"] * item_vars[i] for i, item in enumerate(items)])) / target_scan_bytes) <= scan_var
     prob += sum([item["factor"] * item["avg_scan_bytes"] * item_vars[i] for i, item in enumerate(items)]) - target_scan_bytes <= scan_var
     prob += target_scan_bytes - sum([item["factor"] * item["avg_scan_bytes"] * item_vars[i] for i, item in enumerate(items)]) <= scan_var
     real_count = max(real_count, 1)
@@ -105,12 +96,6 @@ def create_sql_candidates_pool(config):
     for query_set, database in zip(config["query"], config["db"]):
         records = read_sql_records(query_set, database)
         for record in records:
-            # if record["avg_scan_bytes"]==0:
-            #     continue
-            # if record["avg_cpu_time"]<0.1:
-            #     continue
-            # if record["avg_cpu_time"] / (record["avg_scan_bytes"] / (1024**3)) > 100:
-            #     continue
             record["avg_scan_bytes"] = record["avg_scan_bytes"] / (1024 ** 3)
             if "@" not in record["query"]:
                 record["query"] += "@" + database
@@ -299,7 +284,7 @@ def save_plan(config, results):
     """ Save the optimization plan to a JSON file. """
     workload_name = config["workload_name"]
     back = "+".join(sorted(config["query"]))
-    plan_path = f"/Users/zsy/Documents/codespace/python/FlexBench_original/simulator/rushrush/output/plan/{workload_name}/{back}-plan.json"
+    plan_path = f"./output/plan/{workload_name}/{back}-plan.json"
     with open(plan_path, "w") as f:
         json.dump(results, f, indent=2)
     # reopen the file and delete the \\" in the file
@@ -316,9 +301,3 @@ def ILP_work(config):
     print(f"Time: {e-s:.2f}")
     print(f"Average Effect: {avg_effect:.2f}%")
     save_plan(config, results)
-def test_ILP(config):
-    results, avg_effect = generate_workload(config,is_test=True)
-    print(f"Average Effect: {avg_effect:.2f}%")
-    save_plan(config, results)
-    
-    
