@@ -4,7 +4,6 @@ import yaml
 from simulatedannealing import *
 from replay_sa import *
 from linearprogram_option import *
-from replay_interval import *
 from random_send import *
 
 if __name__ == '__main__': 
@@ -18,7 +17,6 @@ if __name__ == '__main__':
                     print(f"processing {file}")
                     print(config)
                     ILP_work(config)
-                    # replay_ILP(config)
                     # gen_sa(config)
                     # replay_sa(config)
                     # gen_random(config)

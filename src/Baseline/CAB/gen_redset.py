@@ -4,18 +4,6 @@ from collections import defaultdict
 
 import numpy as np
 import pandas as pd
-from dotenv import load_dotenv
-
-def load_config():
-    """ Load configuration from environment variable. """
-    load_dotenv()
-    return {
-        "workload_path": os.getenv("WORKLOAD_PATH"),
-        "query": os.getenv("LP_QUERY_SET", "").split(","),
-        "db": os.getenv("LP_DATABASE", "").split(","),
-        "workload_name": os.getenv("WORKLOAD_NAME", "")
-    }
-
 
 def read_sql_records(query_set, database):
     """ Read SQL records from a JSON file. """

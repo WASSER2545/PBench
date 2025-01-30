@@ -12,5 +12,4 @@ interval: 30
 query: [TPCH,TPCH,TPCH,TPCH,tpcds_all,tpcds_all,imdb,llm]
 db: [tpch500m,tpch1g,tpch5g,tpch9g,tpcds1g,tpcds2g,imdb,llm]
 op_scale: 100
-duration_scale: 30
 initial_count: 10

@@ -5,13 +5,12 @@ from collections import defaultdict
 import numpy as np
 import pandas as pd
 import pulp
-from LLM_new.src.llm_gen import generate_query
+from LLM_tools.src.llm_gen import generate_query
 import time
 
 def get_time():
     # get local time
     timestamp = time.time()
-    # timestamp = time.strftime("%a %b %d %H:%M:%S %Z %Y", time.localtime(timestamp))
                         
     return timestamp
 
@@ -33,9 +32,6 @@ def solve_integer_linear_programming_with_normalization(config, items, target_cp
     item_vars = [pulp.LpVariable(f"n_{i}", lowBound=0, cat='Integer') for i in range(len(items))]
     cpu_var = pulp.LpVariable("cpu", lowBound=0)
     scan_var = pulp.LpVariable("scan", lowBound=0)
-    if config["use_duration"]:
-        duration_var = pulp.LpVariable("duration", lowBound=0)
-        prob += duration_var * config["duration_scale"]
     if config["use_operator"]:
         filter_var = pulp.LpVariable("filter", lowBound=0)
         join_var = pulp.LpVariable("join", lowBound=0)
@@ -72,12 +68,6 @@ def solve_integer_linear_programming_with_normalization(config, items, target_cp
             prob += (target_diff) <= locals()[attr + "_var"]
             prob += (-target_diff) <= locals()[attr + "_var"]
         
-    if config["use_duration"]:
-        factor_sum = sum(item["factor"] * item["avg_duration"] * item_vars[i] for i, item in enumerate(items))
-        target_diff = target_duration - factor_sum / real_count
-        prob += (target_diff) <= target_duration
-        prob += (-target_diff) <= target_duration
-
     # prob += sum([item["factor"] * item_vars[i] for i, item in enumerate(items)]) >= 0.6 * count_limit
     prob += sum([item["factor"] * item_vars[i] for i, item in enumerate(items)]) <= count_limit
     
@@ -206,10 +196,9 @@ def generate_workload(config,is_test):
             Join_diff = abs(join - join_ratio)
             Agg_diff = abs(agg - agg_ratio)
             Sort_diff = abs(sort - sort_ratio)
-            if config["use_duration"]:
-                total_MAPE = (cpu_diff + scan_diff + duration_diff + Filter_diff + Join_diff + Agg_diff + Sort_diff) / 7
-            else:
-                total_MAPE = (cpu_diff + scan_diff + Filter_diff + Join_diff + Agg_diff + Sort_diff) / 6
+            
+            total_MAPE = (cpu_diff + scan_diff + Filter_diff + Join_diff + Agg_diff + Sort_diff) / 6
+            
             print(f"MAPE     : CPU: {cpu_diff:.2f}, Scan: {scan_diff:.2f}, Duration: {duration_diff:.2f}, Filter: {Filter_diff:.2f}, Join:{Join_diff:.2f},Agg:{Agg_diff:.2f},Sort:{Sort_diff:.2f},total_MAPE:{total_MAPE:.2f}")
             print("-" * os.get_terminal_size().columns)
             times=0

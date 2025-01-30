@@ -109,64 +109,47 @@ PBench can synthesize database workloads using different methods. The following 
 
 ## Configuration
 
-Conguration can be set in `simulator/.env`.
+Conguration can be set in `PBench-tool/config/*.yml`.
 
-- `WORKLOAD_PATH` is the path to the workload file.
-- `HOST` is the ip address of the Databend server.
-- `DATABEND_PORT` is the port of the Databend.
-- `PROMETHEUS_PORT` is the port of the Prometheus.
-- `WAIT_TIME` is the time(in second) after playing workload and before collecting statistics.
-- `TIME_SLOTS` is the number of time slots in the database workload.
+This document provides a brief overview of the configuration parameters specified in the YAML file. The setup is designed to generate and execute workloads efficiently.
 
-## Stitcher
+- **Workload Path**: `../../Workloads/Snowset/workload1h-5m-30s_1.csv`  
+  This file specifies the original workload file.
 
-To synthesize database workloads by Stitcher, follow the steps below:
+- **Workload Name**: `workload1h-5m-30s_1`  
+  A unique identifier for the workload, facilitating easy referencing and logging.
 
-1. Collect the statistics of benchmark pieces
+- **Count Limit**: `1000`  
+  Sets the maximum number of operations or queries to be executed during the workload.
 
-    ```
-    PYTHONPATH=[path to PBench]/simulator python simulator/learning/collect.py 
-    ```
+- **Time Limit**: `270` seconds  
+  Defines the total duration within the time-window which all operations must be completed.
 
-2. Synthesize database workloads
+- **Use Operator**: `1`  
+  Indicates whether the operation involves using operator target (value 1 suggests usage).
 
-    ```
-    PYTHONPATH=[path to PBench]/simulator python simulator/learning/stitcher.py
-    ```
+- **Interval**: `30` seconds  
+  Determines the interval between operations or queries execution cycles.
 
-3. Play the synthesized database workloads
+- **Query Types**: `[TPCH, TPCH, TPCH, TPCH, tpcds_all, tpcds_all, imdb, llm]`  
+  Lists the types of queries included in the workload, covering different datasets and benchmarks.
 
-    ```
-    PYTHONPATH=[path to PBench]/simulator python simulator/learning/replay.py
-    ```
+- **Database Names**: `[tpch500m, tpch1g, tpch5g, tpch9g, tpcds1g, tpcds2g, imdb, llm]`  
+  Corresponds to the databases against which the queries will be executed, each representing different sizes or datasets.
 
-Parameters of Stitcher can also be set in `simulator/.env`.
+- **Operator Scale**: `100`  
+  Scaling factors affecting the operation's intensity or frequency.
 
-- `STITCHER_SEED` is the random seed for Stitcher.
-- `STITCHER_ITER` is the number of iterations for Bayesian Optimization in Stitcher.
-- `LEARN_SECONDS_IN_TIME_SLOTS` is the seconds in each time slot.
-- `LEARN_BENCHMARK` is the benchmark pieces used in Stitcher.
+- **Initial Count**: `10`  
+  Specifies the initial target number of queries in time-window.
 
-    - e.g. `LEARN_BENCHMARK=TPCH,ycsb` means Stitcher uses `TPCH` and `ycsb`.
+## Baseline experiments
 
-- `LEARN_[benchmark]_DATABASE` is the database used for the given benchmark piece.
+The baseline tools include two widely known workload synthesizer: CAB and Stitcher. We provide our implementation and startup code in `Baseline/do_baseline.py`.
 
-    - e.g. `LEARN_TPCH_DATABASE=tpch5g` means the database corresponding to `TPCH` is `tpch5g`.
+## PBench
 
-- `LEARN_[database]_MIN_TERMINAL` is the minimum terminal for the given benchmark piece.
-- `LEARN_[database]_MAX_TERMINAL` is the maximum terminal for the given benchmark piece.
-- `LEARN_[database]_TERMINAL_INTERVAL` is sampling interval of terminals for the given benchmark piece.
-- `LEARN_[database]_MIN_FREQUENCY` is the minmum upper limit of submitted queries from one client per minure
-- `LEARN_[database]_MAX_FREQUENCY` is the maximum upper limit of submitted queries from one client per minure
-- `LEARN_[database]_FREQUENCY_INTERVAL` is sampling interval of frequency for the given benchmark piece.
-
-## Conditional Variational Autoencoder
-
-Same as Stitcher, as they both synthesize database workloads by borrowing pieces of existing benchmarks.
-
-## Integer Linear Programming
-
-To synthesize database workloads by Integer Linear Programming, follow the steps below:
+To synthesize database workloads by PBench, follow the steps below:
 
 1. Collect the statistics of queries
 
