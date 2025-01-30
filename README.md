@@ -12,75 +12,84 @@
 # Directory
 
 ```
-> tree -L 2
-..
-├── README.md
-├── requirements.txt
-└── src
-    ├── Baseline
-    │   ├── CAB
-    │   │   ├── cab_replay.py
-    │   │   ├── gen.py
-    │   │   ├── gen_redset.py
-    │   │   ├── output
-    │   │   │   ├── workload1h-5m-30s_1
-    │   │   │   ├── workload1h-5m-30s_2
-    │   │   │   ├── workload1h-5m-30s_3
-    │   │   │   ├── workload1h-5m-30s_4
-    │   │   │   └── workload1h-5m-30s_5
-    │   │   └── prometheus.py
-    │   ├── Stitcher
-    │   │   ├── benchmark
-    │   │   │   ├── TPCH.sql
-    │   │   │   ├── imdb.sql
-    │   │   │   ├── tpcds_all.sql
-    │   │   │   ├── ycsb.py
-    │   │   │   └── ycsb.sql
-    │   │   ├── output
-    │   │   │   ├── workload1h-5m-30s_1
-    │   │   │   ├── workload1h-5m-30s_2
-    │   │   │   ├── workload1h-5m-30s_3
-    │   │   │   ├── workload1h-5m-30s_4
-    │   │   │   ├── workload1h-5m-30s_5
-    │   │   ├── profile.json
-    │   │   ├── prometheus.py
-    │   │   ├── replay.py
-    │   │   ├── stitcher.py
-    │   │   └── util.py
-    │   └── do_baseline.py
-    ├── PBench-tool
-    │   ├── LLM_new
-    │   │   ├── input
-    │   │   │   ├── hints.csv
-    │   │   │   ├── keys.txt
-    │   │   │   └── table_schema
-    │   │   │       ├── table_meta.json
-    │   │   │       └── tpch1g.sql
-    │   │   ├── output
-    │   │   └── src
-    │   │       ├── a.ipynb
-    │   │       ├── inteaction.py
-    │   │       ├── llm_gen.py
-    │   │       ├── llm_gen_redset.py
-    │   │       ├── llmapi.py
-    │   │       ├── replay_and_fetch.py
-    │   │       ├── retrieve_examples.py
-    │   │       └── retrieve_meta.py
-    │   ├── configs
-    │   │   ├── workload1h-5m-30s_1
-    │   │   ├── workload1h-5m-30s_2
-    │   │   ├── workload1h-5m-30s_3
-    │   │   ├── workload1h-5m-30s_4
-    │   │   └── workload1h-5m-30s_5
-    │   ├── do_sa.py
-    │   ├── linearprogram_option.py
-    │   ├── output
-    │   ├── prometheus.py
-    │   ├── random_send.py
-    │   ├── replay_interval.py
-    │   ├── replay_sa.py
-    │   └── simulatedannealing.py
-    └── Workloads
+│  README.md
+│  requirements.txt
+│  
+└─src
+    ├─Baseline
+    │  │  do_baseline.py
+    │  │  
+    │  ├─CAB
+    │  │  │  cab_replay.py
+    │  │  │  gen.py
+    │  │  │  gen_redset.py
+    │  │  │  prometheus.py
+    │  │  │  
+    │  │  └─output
+    │  │      ├─workload1h-5m-30s_1
+    │  │      │      TPCH+TPCH+TPCH+TPCH+imdb+tpcds_all+tpcds_all-plan.json
+    │  │      │      TPCH+TPCH+TPCH+TPCH+imdb+tpcds_all+tpcds_all-results.json
+    │  │              
+    │  └─Stitcher
+    │      │  profile.json
+    │      │  prometheus.py
+    │      │  replay.py
+    │      │  stitcher.py
+    │      │  util.py
+    │      │  
+    │      ├─benchmark
+    │      │      imdb.sql
+    │      │      tpcds_all.sql
+    │      │      TPCH.sql
+    │      │      ycsb.py
+    │      │      ycsb.sql
+    │      │      
+    │      └─output
+    │                  
+    ├─Collect_metrics
+    │      collect.py
+    │      
+    ├─PBench-tool
+    │  │  linearprogram_option.py
+    │  │  prometheus.py
+    │  │  random_send.py
+    │  │  replay_sa.py
+    │  │  run_pbench.py
+    │  │  simulatedannealing.py
+    │  │  
+    │  ├─configs
+    │  │  ├─workload1h-5m-30s_1
+    │  │          
+    │  └─LLM_tools
+    │      ├─input
+    │      │  │  hints.csv
+    │      │  │  keys.txt
+    │      │  │  
+    │      │  └─table_schema
+    │      │          table_meta.json
+    │      │          tpch1g.sql
+    │      │          
+    │      ├─output
+    │      │      llm-llm-sql-metrics.json
+    │      │      llm_analyze.ipynb
+    │      │      replay_log.txt
+    │      │      
+    │      └─src
+    │          │  a.ipynb
+    │          │  inteaction.py
+    │          │  llmapi.py
+    │          │  llm_gen.py
+    │          │  llm_gen_redset.py
+    │          │  replay_and_fetch.py
+    │          │  retrieve_examples.py
+    │          │  retrieve_meta.py
+    │                  
+    ├─utils
+    │      prometheus.py
+    │      
+    └─Workloads
+        └─Snowset
+                workload1h-5m-30s_1.csv
 ```
 
 # Environment
@@ -154,24 +163,13 @@ To synthesize database workloads by PBench, follow the steps below:
 1. Collect the statistics of queries
 
     ```
-    PYTHONPATH=[path to PBench]/simulator python simulator/linear/collect.py 
+    python Collect_metrics/collect.py 
     ```
 
-2. Synthesize database workloads
+2. Synthesize workload and replay
 
     ```
-    PYTHONPATH=[path to PBench]/simulator python simulator/linear/linear.py
+    python PBench-tool/run_pbench.py
     ```
 
-3. Play the synthesized database workloads
-
-    ```
-    PYTHONPATH=[path to PBench]/simulator python simulator/linear/replay.py
-    ```
-
-Parameters of Integer Linear Programming can also be set in `simulator/.env`.
-
-- `LP_QUERY_SET` is the query set used for Integer Linear Programming.
-- `LP_DATABASE` is the database used for Integer Linear Programming.
-- `LP_COUNT_LIMIT` is the upper limit of queries in a time slot.
-- `LP_TIME_LIMIT` currently not used.
+Parameters of Integer Linear Programming can be set in `PBench-tool/configs`.
