@@ -89,4 +89,4 @@ To synthesize database workloads by PBench, follow the steps below:
     python PBench-tool/run_pbench.py
     ```
 
-Parameters of Integer Linear Programming can be set in `PBench-tool/configs`.
+Parameters of PBench can be set in `PBench-tool/configs`.
