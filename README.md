@@ -2,12 +2,16 @@
     <h3 align="center">PBench</h3>
     <p align="center">A database workload synthesizer</p>
     <p align="center">
+        <a href="#introduction">Introduction</a> •
         <a href="#environment">Environment</a> •
         <a href="#workload">Workload</a> •
         <a href="#usage">Usage</a>
     </p>
 </p>
 
+# Introduction
+
+This repository contains the code for our paper "[PBench: Workload Synthesizer with Real Statistics for Cloud Analytics Benchmarking](https://arxiv.org/abs/2506.16379)".
 
 # Environment
 
