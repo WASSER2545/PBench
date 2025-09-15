@@ -4,24 +4,11 @@ import re
 import time
 from datetime import datetime
 
-from common.prometheus import prometheus_queries
+from prometheus import prometheus_queries
 from record_time import get_time
 from databend_py import Client
-from dotenv import load_dotenv
 
-
-def load_config():
-    """ Load configuration from environment variable. """
-    load_dotenv()
-    return {
-        "host": os.getenv("HOST"),
-        "databend_port": os.getenv("DATABEND_PORT"),
-        "prometheus_port": os.getenv("PROMETHEUS_PORT"),
-        "query": os.getenv("LP_QUERY_SET", "").split(","),
-        "db": os.getenv("LP_DATABASE", "").split(","),
-        "wait": int(os.getenv("WAIT_TIME", 0))
-    }
-
+import yaml
 
 def load_query_set(query_set):
     """ Load SQL statements from a file. """
@@ -121,49 +108,56 @@ def record_operator(host, databend_port, query,database):
     return operator_flag
 
 
-def main():
-    config = load_config()
+def main(config):
     
-    record_file = "/Users/zsy/Documents/codespace/python/FlexBench_original/simulator/one_last_exp/metrics_witho/llm-llm-sql-metrics.json"
-    src = "/Users/zsy/Documents/codespace/python/FlexBench_original/simulator/one_last_exp/metrics_witho/llm1-llm1-sql-metrics.json"
-    sql_statements = load_query_from_json(src)
-    data = []
+    for query_set, database in zip(config["query"], config["db"]):
+        record_file = os.path.join(os.path.dirname(__file__), f"output/{query_set}-{database}-sql-metrics.json")
+        sql_statements = load_query_set(query_set)
+        data = []
 
-    if os.path.exists(record_file):
-        with open(record_file, "r") as file:
-            data = json.load(file)
-    start_index = len(data)
+        if os.path.exists(record_file):
+            with open(record_file, "r") as file:
+                data = json.load(file)
+        start_index = len(data)
 
-    for sql in sql_statements[start_index:]:
-        query = sql["query"]
-        query, database = query.split("@")
-        # TODO: Explain Analyze or not?
-        operaters = record_operator(config["host"], config["databend_port"], query, database)
-        total_cputime, total_scan, total_duration = 0, 0, 0
-        time.sleep(config["wait"])
-        repeat=3
-        for _ in range(repeat):
-            query, cputime, scan, duration = record_metrics(config["host"], config["databend_port"], config["prometheus_port"], query, config["wait"],database)
-            total_cputime = total_cputime + cputime
-            total_scan = total_scan + scan
-            total_duration = total_duration + duration
-            print(f"Total time: {duration}")
-            print(f"Total cputime: {cputime}")
-            print(f"Total scan: {scan}")
-            print("-" * os.get_terminal_size().columns)
-        total_cputime = total_cputime / repeat
-        total_scan = total_scan / repeat
-        total_duration = total_duration / repeat
+        for query in sql_statements[start_index:]:
+            query = query.replace("?", database)
+            # TODO: Explain Analyze or not?
+            operaters = record_operator(config["host"], config["databend_port"], query, database)
+            total_cputime, total_scan, total_duration = 0, 0, 0
+            time.sleep(config["wait"])
+            repeat=3
+            for _ in range(repeat):
+                query, cputime, scan, duration = record_metrics(config["host"], config["databend_port"], config["prometheus_port"], query, config["wait"],database)
+                total_cputime = total_cputime + cputime
+                total_scan = total_scan + scan
+                total_duration = total_duration + duration
+                print(f"Total time: {duration}")
+                print(f"Total cputime: {cputime}")
+                print(f"Total scan: {scan}")
+                print("-" * os.get_terminal_size().columns)
+            total_cputime = total_cputime / repeat
+            total_scan = total_scan / repeat
+            total_duration = total_duration / repeat
 
-        data.append({
-            "query": query + "@" + database,
-            "avg_cpu_time": total_cputime,
-            "avg_scan_bytes": total_scan,
-            "avg_duration": total_duration
-            ,**operaters
-        })
-        save_data_to_file(data, record_file)
+            data.append({
+                "query": query,
+                "avg_cpu_time": total_cputime,
+                "avg_scan_bytes": total_scan,
+                "avg_duration": total_duration
+                ,**operaters
+            })
+            save_data_to_file(data, record_file)
 
 
 if __name__ == "__main__":
-    main()
+    directory = './configs/'
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            if file.endswith('.yml'):
+                file_path = os.path.join(root, file)
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    config = yaml.safe_load(f)
+                    print(f"processing {file}")
+                    print(config)
+                    main(config)
